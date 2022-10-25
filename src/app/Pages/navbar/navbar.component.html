@@ -1,0 +1,153 @@
+
+ 
+    <mat-toolbar>
+      <button mat-icon-button 
+          
+      (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened"> menu</mat-icon>
+      <mat-icon *ngIf="sidenav.opened"> close</mat-icon>
+    </button>
+          <div class="sidebar-header" >
+            <div>
+              <img src="assets/images/logo-1.png" style="width: 2 px;height: 20px" class="logo-icon" alt="logo icon">
+            </div>        
+            
+            <div>
+                <img src="assets/images/logo-2.png" style="width: 2 px;height: 20px"   class="logo-icon" alt="logo">
+            </div>
+          </div>
+
+        
+    </mat-toolbar>
+
+    <mat-sidenav-container >
+      <mat-sidenav #sidenav="matSidenav" >
+        <ul class="metismenu" id="menu">
+          <li>
+            <a href="javascript:;">
+              <div class="parent-icon">
+                <mat-icon name="home-sharp"></mat-icon>
+              </div>
+              <div class="menu-title">Dashboard</div>
+            </a>
+            
+          </li>
+          
+          <li class="menu-label">Logistica</li>
+          <li>
+            <a class="has-arrow" href="javascript:;">
+              <div class="parent-icon">
+                <mat-icon name=""></mat-icon>
+              </div>
+              <div class="menu-title">Next Vessel</div>
+            </a>
+            <ul>
+              <li> <a href="/vessel">
+                <i class="lni lni-ship"></i>&nbsp;Vessel
+                </a>
+              </li>
+              <li> <a href="/next_vessel">
+                <i class="lni lni-ship"></i>&nbsp;Nuevo Vessel
+                </a>
+              </li>
+             
+            </ul>
+          </li>
+         
+  
+          <li>
+            <a class="has-arrow" href="javascript:;">
+              <div class="parent-icon">
+                <mat-icon name=""></mat-icon>
+              </div>
+              <div class="menu-title">Cargas</div>
+            </a>
+            <ul>            
+              <li> <a href="/tara">
+                <i class="lni lni-car"></i>&nbsp;Pesaje Cammat
+                </a>
+              </li>
+              <li> <a href="/salida_carga">
+                <i class="lni lni-docker"></i>&nbsp;Salida Carga
+                </a>
+              </li>
+              <li> <a href="/logistica">
+                <i class="lni lni-docker"></i>&nbsp;Logistica
+                </a>
+              </li>
+            </ul>
+          </li>
+         
+          <li>
+            <a href="javascript:;">
+              <div class="parent-icon">
+                <mat-icon name=""></mat-icon>
+              </div>
+              <div class="menu-title">Cerrar Vessel</div>
+            </a>
+            <ul>            
+             
+            </ul>
+          </li>
+  
+          
+          <li class="menu-label">Others</li>
+          <li>
+            <a class="has-arrow" href="javascript:;">
+              <div class="parent-icon">
+                <mat-icon name="list-sharp"></mat-icon>
+              </div>
+              <div class="menu-title">Mantenimiento</div>
+            </a>
+            <ul>
+                <!-- <li> <a href="/clientes">
+                  <i class="lni lni-customer"></i>&nbsp;Clientes
+                  </a>              
+                </li> -->
+                <!-- <li> <a href="/usuarios">
+                  <i class="lni lni-users"></i>&nbsp;Usuarios
+                </a>              
+                </li> -->
+                <li> <a href="/barcos">
+                  <i class="lni lni-ship"></i>&nbsp;Buque
+                </a>              
+                </li>
+                <li> <a href="/almacen">
+                  <i class="lni lni-home"></i>&nbsp;Almacenes
+                </a>              
+                </li>
+                <li> <a href="/cliente">
+                  <i class="lni lni-stats-up"></i>&nbsp;Clientes
+                    </a>              
+                </li>
+                <li> <a href="/destino">
+                  <i class="lni lni-stats-up"></i>&nbsp;Destinos
+                    </a>              
+                </li>
+                <li> <a href="/producto">
+                  <i class="lni lni-producthunt"></i>&nbsp;Productos
+                    </a>              
+                </li>
+                <li> <a href="/cammat">
+                  <i class="lni lni-car"></i>&nbsp;Cammates
+                    </a>              
+                </li>
+                <li> <a href="/chofer">
+                  <i class="lni lni-users"></i>&nbsp;Chofer
+                    </a>              
+                </li>
+            </ul>
+          </li>
+         
+        </ul>
+
+     </mat-sidenav>
+    <mat-sidenav-content >   
+      <div class="" >
+       
+        <router-outlet ></router-outlet> 
+      
+     </div> 
+   </mat-sidenav-content>
+    </mat-sidenav-container>
+      

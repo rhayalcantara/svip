@@ -1,0 +1,50 @@
+ <!--start wrapper-->
+ <div class="wrapper">
+    <div class="">
+      <div class="row g-0 m-0">
+        <div class="col-xl-6 col-lg-12">
+          <div class="login-cover-wrapper">
+            <div class="card shadow-none">
+              <div class="card-body">
+                <div class="text-center">
+                    <img src="assets/images/logo-lilam.png" class="logo" width="200" alt="logo">
+                  <p>Acceder a su cuenta</p>
+                </div>
+                <!-- Formulario de Acceso -->
+                <form class="form-body row g-3" action="/login" method="POST">
+                  <div class="col-12">
+                    <label for="inputEmail" class="form-label">Email</label>
+                    <input type="email" name="email" class="form-control" placeholder="Ingresar Email...">
+                  </div>
+                  <div class="col-12">
+                    <label for="inputPassword" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="Ingresar Password...">
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckRemember">
+                      <label class="form-check-label" for="flexSwitchCheckRemember">Recuerdame</label>
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6 text-end">
+                    <a href="#">Olvido Password?</a>
+                  </div>
+                  <div class="col-12 col-lg-12">
+                    <div class="d-grid">
+                      <button type="submit" class="btn btn-primary">Acceder</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-12">
+          <div class="position-fixed top-0 h-100 d-xl-block d-none login-cover-img">
+          </div>
+        </div>
+      </div>
+      <!--end row-->
+    </div>
+  </div>
+  <!--end wrapper-->

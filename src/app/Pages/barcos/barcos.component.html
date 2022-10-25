@@ -1,0 +1,55 @@
+
+<h1 id="tableLabel">Barcos</h1>
+
+<div class="input-group">
+    <input class="form-control" type="text" 
+           placeholder="Search for..." 
+           aria-label="Search for..." 
+           aria-describedby="btnNavbarSearch" 
+           style="margin-bottom:5px; margin-left:-14px"
+            />
+    
+  </div>
+  
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a (click)="abrirmodal() " class="nav-link active"> Agregar</a>
+    </li>
+  </ul>
+  
+  <p *ngIf="!barcos"><em>Cargando...</em></p>
+  
+  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="barcos">
+    <thead>
+      <tr>
+
+        <th>Nombre</th>
+        <th>Identificacion</th>
+        <th>Bodega #</th>
+        <th>Capacidad Bodega</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let barco of barcos   ">
+        <td>{{ barco.nombre }}</td>
+        <td>{{ barco.cedula}} </td>
+        <td>{{ barco.cantBodega}} </td>
+        <td>{{ barco.capacidadBodega}}</td> 
+        <td>
+            <button class="btn btn-primary" (click)="abrirmodaledit(barco);">Editar</button>
+        </td>
+         <td><button class="btn btn-danger" (click)=" delete(barco);">Eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>
+ <!-- <pagination-controls [maxSize]="maxSize"
+                      [directionLinks]="directionLinks"
+                      [autoHide]="autoHide"
+                      [responsive]="responsive"
+                      [previousLabel]="labels.previousLabel"
+                      [nextLabel]="labels.nextLabel"
+                      [screenReaderPaginationLabel]="labels.screenReaderPaginationLabel"
+                      [screenReaderPageLabel]="labels.screenReaderPageLabel"
+                      [screenReaderCurrentLabel]="labels.screenReaderCurrentLabel"
+                      (pageChange)="onPageChange($event)"></pagination-controls> 
+   -->
