@@ -1,0 +1,55 @@
+
+<h1 id="tableLabel">Camiones</h1>
+
+<div class="input-group">
+    <input class="form-control" type="text" 
+           placeholder="Search for..." 
+           aria-label="Search for..." 
+           aria-describedby="btnNavbarSearch" 
+           style="margin-bottom:5px; margin-left:-14px"
+            />
+    
+  </div>
+  
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a (click)="abrirmodal() " class="nav-link active"> Agregar</a>
+    </li>
+  </ul>
+  
+  <p *ngIf="!Camiones"><em>Cargando...</em></p>
+  
+  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="Camiones">
+    <thead>
+      <tr>
+
+        <th>Placa</th>
+        <th>Ficha</th>
+        <th>Opciones</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let Camion of Camiones  ">
+        <td>{{ Camion.placa }}</td>
+        <td>{{ Camion.ficha}} </td>
+
+        <td>
+            <button class="btn btn-primary" (click)="abrirmodaledit(Camion);">Editar</button>
+        </td>
+         <td><button class="btn btn-danger" (click)=" delete(Camion);">Eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>
+ <!-- <pagination-controls [maxSize]="maxSize"
+                      [directionLinks]="directionLinks"
+                      [autoHide]="autoHide"
+                      [responsive]="responsive"
+                      [previousLabel]="labels.previousLabel"
+                      [nextLabel]="labels.nextLabel"
+                      [screenReaderPaginationLabel]="labels.screenReaderPaginationLabel"
+                      [screenReaderPageLabel]="labels.screenReaderPageLabel"
+                      [screenReaderCurrentLabel]="labels.screenReaderCurrentLabel"
+                      (pageChange)="onPageChange($event)"></pagination-controls> 
+   -->
+

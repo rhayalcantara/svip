@@ -23,6 +23,8 @@ import { BarcoFormComponent } from './Components/Forms/barco-form/barco-form.com
 import  BarcoController  from './Models/Barco/BarcoController';
 import { DatosService } from './Serveces/datos.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CamionFormComponent } from './Components/Forms/camion-form/camion-form.component';
+import { CamionComponent } from './Pages/camion/camion.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     BarcosComponent,
     InicioComponent,
-    BarcoFormComponent
+    BarcoFormComponent,
+    CamionFormComponent,
+    CamionComponent
   ],
   entryComponents:[BarcoFormComponent ],
   imports: [

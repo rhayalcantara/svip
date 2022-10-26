@@ -37,7 +37,7 @@ export class BarcoFormComponent implements OnInit {
   ngOnInit(): void {
 
     this.campos=Object.keys(this.data.barco);
-     //llenar el formgroup con los datos de la persona
+     //llenar el formgroup con los datos del obj
      for (let control of this.campos) {
       let newFormControl: FormControl = new FormControl();      
       newFormControl.setValue(this.data.barco[control]);
