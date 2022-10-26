@@ -12,7 +12,6 @@ export class DatosService {
   public showMessage(message: string, title: any, messageType: string) {
     switch (messageType) {
       case 'success':
-
         Swal.fire({
           title: title,
           text: message,
@@ -21,8 +20,6 @@ export class DatosService {
         })
         break;
        case 'info':
-      
-      
          Swal.fire({
           title: title,
           text: message,
