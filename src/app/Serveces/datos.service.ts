@@ -6,8 +6,8 @@ import Swal from 'sweetalert2';
   providedIn: 'root'
 })
 export class DatosService {
-   public url_root:  string = "https://localhost:44305/"
- // public url_root:string = "http://rhayalcantara-001-site2.ftempurl.com/"
+  // public url_root:  string = "https://localhost:44305/"
+  public url_root:string = "http://rhayalcantara-001-site4.ftempurl.com/"
   constructor() { }
   public showMessage(message: string, title: any, messageType: string) {
     switch (messageType) {

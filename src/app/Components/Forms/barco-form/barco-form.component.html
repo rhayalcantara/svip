@@ -1,32 +1,32 @@
 <div>
-<h1  id="exampleModalLabel">Nuevo Barco</h1>
+<h1  id="exampleModalLabel">{{mantenimiento}} Barco</h1>
 </div>
 <div >
-    <form action="/barco/add" method="POST">
+    <form novalidate (ngSubmit)=" grabar();" [formGroup]="formGroup">
         <div class="mb-3">
             <label for="nombre">Nombre: </label>
-            <input type="text" name="nombre" placeholder="Escribe el nombre..." class="form-control rounded-0" />
+            <input type="text" formControlName="nombre" name="nombre" placeholder="Escribe el nombre..." class="form-control rounded-0" />
         </div>
         <div class="mb-3">
             <label for="cedula">Cedula: </label>
-            <input type="text" name="cedula" placeholder="Colocar cedula..." class="form-control rounded-0" />
+            <input type="text" formControlName="cedula" name="cedula" placeholder="Colocar cedula..." class="form-control rounded-0" />
         </div>
         <div class="mb-3">
             <label for="cedula">Cnt. Bodegas: </label>
-            <input type="text" name="cantBodega" placeholder="Colocar cantidad..." class="form-control rounded-0" />
+            <input type="text" formControlName="cantBodega" name="cantBodega" placeholder="Colocar cantidad..." class="form-control rounded-0" />
         </div>
         <div class="mb-3">
             <label for="cedula">Capacidad de Bodegas: </label>
-            <input type="text" name="capacidadBodega" placeholder="Colocar capacidad..."
+            <input type="text" formControlName="capacidadBodega" name="capacidadBodega" placeholder="Colocar capacidad..."
                 class="form-control rounded-0" />
         </div>
         <div>
-            <button type="submit" class="btn btn-outline-primary">Agregar</button>
+            <button type="submit" class="btn btn-outline-primary">{{bntsubmit}}</button>
         </div>
     </form>
 </div>
 <div >
-    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    <button type="button" (click)="cerrar2()" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 </div>
                   
              

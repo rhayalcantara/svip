@@ -16,7 +16,11 @@ export class BarcosComponent implements OnInit {
                private datos:DatosService){ }
 
   ngOnInit(): void {
-    this.barcoController.GetBancos().subscribe({
+    this.getbarcos()
+  }
+  getbarcos(){
+    this.barcos=[];
+    this.barcoController.GetBarcos().subscribe({
       next: (res:Barco[]) => {
         this.barcos=res;
       },error: (err:Error)=> {
@@ -25,8 +29,18 @@ export class BarcosComponent implements OnInit {
 
     })
   }
-
-  abrirmodaledit(b:Barco): void {}
+  abrirmodaledit(barco:Barco): void {
+    const dialogRef = this.toastr.open(BarcoFormComponent,{width:"85%" ,height:"70%",data:{barco: barco}})
+     dialogRef.afterClosed().subscribe(
+      {next:  result => 
+        {
+          if (result!=null) {
+            this.getbarcos() 
+          }
+                  
+        } 
+      })
+  }
   abrirmodal(){
     let barco: Barco = {
       id:0,
@@ -35,16 +49,19 @@ export class BarcosComponent implements OnInit {
       cantBodega:0,
       capacidadBodega:0.000
     }
-    const dialogRef = this.toastr.open(BarcoFormComponent,{width:"85%" ,height:"70%",data:{barco: barco}})
-     dialogRef.afterClosed().subscribe(
-      {next:  result => 
-        {
-            dialogRef.afterClosed().subscribe(result => {
-              console.log('The dialog was closed',result);        
-            });
-        } 
-      })
+    this.abrirmodaledit(barco)
      
   }
-  delete(b:Barco): void{}
+  delete(barco:Barco): void{
+    this.barcoController.deleteBarco(barco).subscribe({
+      next: (res:boolean) => {
+        
+          this.datos.showMessage("Eliminado el Barco","Eliminando Barco","info")
+          this.getbarcos()
+        
+      }
+    })
+  }
+  
+
 }
