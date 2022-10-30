@@ -1,5 +1,5 @@
 
-<h1 id="tableLabel">Camiones</h1>
+<h1 id="tableLabel">camiones</h1>
 
 <div class="input-group">
     <input class="form-control" type="text" 
@@ -17,9 +17,9 @@
     </li>
   </ul>
   
-  <p *ngIf="!Camiones"><em>Cargando...</em></p>
+  <p *ngIf="!camiones"><em>Cargando...</em></p>
   
-  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="Camiones">
+  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="camiones">
     <thead>
       <tr>
 
@@ -30,7 +30,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let Camion of Camiones  ">
+      <tr *ngFor="let Camion of camiones  ">
         <td>{{ Camion.placa }}</td>
         <td>{{ Camion.ficha}} </td>
 

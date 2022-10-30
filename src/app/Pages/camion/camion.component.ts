@@ -30,7 +30,7 @@ export class CamionComponent implements OnInit {
             
                 })
               }
-              abrirmodaledit(Camion:Camion): void {
+              abrirmodaledit(camion:Camion): void {
                 const dialogRef = this.toastr.open(CamionFormComponent,{width:"85%" ,height:"70%",data:{camion: camion}})
                  dialogRef.afterClosed().subscribe(
                   {next:  result => 

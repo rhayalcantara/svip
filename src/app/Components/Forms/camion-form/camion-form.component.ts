@@ -19,14 +19,15 @@ export class CamionFormComponent implements OnInit {
     placa: '',
     ficha: ''
   }
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any,
-  public dialogRef: MatDialogRef<CamionFormComponent>,
-  private camionController:CamionControllerService,
-  private datos:DatosService,
-  private fb:FormBuilder
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    public dialogRef: MatDialogRef<CamionFormComponent>,
+    private camionController:CamionControllerService,
+    private datos:DatosService,
+    private fb:FormBuilder
   ) {
     this.formGroup=this.fb.group({})
-    if(this.data.Camion.id!=0) {
+    if(this.data.camion.id!=0) {
       this.mantenimiento="Actualizando"
       this.bntsubmit="Actualizar"
     }

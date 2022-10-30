@@ -25,6 +25,7 @@ import { DatosService } from './Serveces/datos.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CamionFormComponent } from './Components/Forms/camion-form/camion-form.component';
 import { CamionComponent } from './Pages/camion/camion.component';
+import { ClientesComponent } from './Pages/Clientes/clientes/clientes.component';
 
 @NgModule({
   declarations: [
@@ -35,9 +36,10 @@ import { CamionComponent } from './Pages/camion/camion.component';
     InicioComponent,
     BarcoFormComponent,
     CamionFormComponent,
-    CamionComponent
+    CamionComponent,
+    ClientesComponent
   ],
-  entryComponents:[BarcoFormComponent ],
+  entryComponents:[BarcoFormComponent,CamionFormComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

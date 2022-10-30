@@ -4,22 +4,14 @@
     <div >
         <form novalidate (ngSubmit)=" grabar();" [formGroup]="formGroup">
             <div class="mb-3">
-                <label for="nombre">Nombre: </label>
-                <input type="text" formControlName="nombre" name="nombre" placeholder="Escribe el nombre..." class="form-control rounded-0" />
+                <label for="nombre">Placa: </label>
+                <input type="text" formControlName="placa" name="placa" placeholder="Escribe La Placa..." class="form-control rounded-0" />
             </div>
             <div class="mb-3">
-                <label for="cedula">Cedula: </label>
-                <input type="text" formControlName="cedula" name="cedula" placeholder="Colocar cedula..." class="form-control rounded-0" />
+                <label for="cedula">Ficha: </label>
+                <input type="text" formControlName="ficha" name="ficha" placeholder="Colocar la ficha..." class="form-control rounded-0" />
             </div>
-            <div class="mb-3">
-                <label for="cedula">Cnt. Bodegas: </label>
-                <input type="text" formControlName="cantBodega" name="cantBodega" placeholder="Colocar cantidad..." class="form-control rounded-0" />
-            </div>
-            <div class="mb-3">
-                <label for="cedula">Capacidad de Bodegas: </label>
-                <input type="text" formControlName="capacidadBodega" name="capacidadBodega" placeholder="Colocar capacidad..."
-                    class="form-control rounded-0" />
-            </div>
+   
             <div>
                 <button type="submit" class="btn btn-outline-primary">{{bntsubmit}}</button>
             </div>

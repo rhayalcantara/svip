@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
 import { MatDialog } from '@angular/material/dialog';
 import { BarcoFormComponent } from 'src/app/Components/Forms/barco-form/barco-form.component';
 import { DatosService } from 'src/app/Serveces/datos.service';
+import { ReportsService } from 'src/app/Serveces/reports.service';
 import BarcoController, { Barco } from '../../Models/Barco/BarcoController';
 @Component({
   selector: 'app-barcos',
@@ -13,10 +13,14 @@ export class BarcosComponent implements OnInit {
   public barcos: Barco[] = [];
   constructor( private toastr: MatDialog,   
                private barcoController: BarcoController,
-               private datos:DatosService){ }
+               private datos:DatosService,
+               private repo:ReportsService){ }
 
   ngOnInit(): void {
     this.getbarcos()
+  }
+  ticket(){
+    this.repo.Recibos(null);
   }
   getbarcos(){
     this.barcos=[];
